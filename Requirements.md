@@ -1,5 +1,7 @@
 # Huawei Network Automation Suite - Requirements
 
+**Hinweis:** Alle Quellcode-Artefakte, Skripte, Templates, Konfigurationen und Dokumentationsdateien sind im Verzeichnis `src/` bzw. dessen Unterverzeichnissen direkt in diesem Workspace zu erstellen und zu verwalten. Eine Ablage außerhalb dieses Bereichs ist nicht vorgesehen.
+
 ## 1. Projektübersicht
 
 ### 1.1 Ziel
