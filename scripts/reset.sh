@@ -1,13 +1,15 @@
 #!/bin/bash
 
-# Complete Reset Script füecho -e "${YELLOW}Folgende Verzeichnisse/Dateien werden KOMPLETT GELÖSCHT:# 4. Requirements.txt löschen
-echo -e "${YELLOW}📦 Lösche Dependencies...$# 8. Temporäre & Backup Dateien löschen
-echo -e "${YELLOW}🗑️  Lösche temporäre & Backup Dateien...${NC}"C}"
-if [ -f "requirements.txt" ]; then
-    rm -f requirements.txt
-    echo -e "${GREEN}   ✓ requirements.txt gelöscht${NC}"
-    deleted_count=$((deleted_count + 1))
-else
+# Complete Reset Script for Huawei Network Automation Suite - Phase 1
+
+# Change to project root directory (parent of scripts/)
+cd "$(dirname "$0")/.."
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
     echo -e "${YELLOW}   • requirements.txt nicht gefunden${NC}"
 fi
 

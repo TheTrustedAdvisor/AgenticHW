@@ -4,6 +4,9 @@
 
 set -e
 
+# Change to project root directory (parent of scripts/)
+cd "$(dirname "$0")/.."
+
 # Farben für Output
 RED='\033[0;31m'
 GREEN='\033[0;32m'

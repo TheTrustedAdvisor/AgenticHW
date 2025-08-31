@@ -1,0 +1,6 @@
+#!/bin/bash
+# Wrapper script to run reset from project root
+
+echo "🗑️ Running reset script..."
+chmod +x scripts/reset.sh
+./scripts/reset.sh "$@"

@@ -1,0 +1,6 @@
+#!/bin/bash
+# Wrapper script to run demo from project root
+
+echo "🎬 Running demo script..."
+chmod +x scripts/demo.sh
+./scripts/demo.sh "$@"

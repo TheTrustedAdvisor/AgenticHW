@@ -1,0 +1,6 @@
+#!/bin/bash
+# Wrapper script to run setup from project root
+
+echo "🔧 Running setup script..."
+chmod +x scripts/setup.sh
+./scripts/setup.sh "$@"
