@@ -29,6 +29,14 @@ Entwicklung einer vollautomatisierten Netzwerk-Management-Lösung für 15 Huawei
 - Basic Template System
 - Simple Deployment Orchestration
 
+**Phase 1 Lessons Learned & Critical Requirements:**
+- **Python 3.13 Compatibility:** netmiko>=4.3.0 required (telnetlib removed in Python 3.13)
+- **Virtual Environment Preservation:** VSCode stability requires .venv persistence during setup
+- **Template Variable Validation:** All Jinja2 templates must avoid undefined variables (e.g., ansible_date_time)
+- **Template Syntax Validation:** Mandatory 4/4 template syntax checks before deployment
+- **Dry-Run First:** Always validate configurations before production deployment
+- **SSH Key Generation:** Automated SSH key creation for secure device authentication
+
 ---
 
 ## ⚡ **PHASE 2: Enterprise - Advanced Multi-Site Network**
@@ -140,6 +148,25 @@ huawei-network-automation/
 | Security | Simple ACLs |
 
 ### 3.3 Basic Template System
+
+**Jinja2 Template Engine für Device-Konfigurationen:**
+- 4 Device-spezifische Templates (Management, Core, Access, Edge Router)
+- Variable Substitution für Device-spezifische Parameter
+- Template Syntax Validation (4/4 Templates müssen PASS)
+- Fehlerbehandlung für undefined Variables
+- Configuration Preview und Dry-Run Capabilities
+
+**Template Validation Requirements:**
+- Syntax Check: Alle Templates müssen Jinja2-valide sein
+- Variable Check: Keine undefined Variables (z.B. ansible_date_time vermeiden)
+- Rendering Test: Erfolgreiche Template-Rendering vor Deployment
+- Output Validation: Generated Configurations müssen Huawei-Syntax befolgen
+
+**Phase 1 Template Standards:**
+- Consistent Header mit Template Name und Generation Time
+- Device-Type Detection via Template Selection Logic
+- Error-Resistant Variable Handling mit Default Values
+- Clean Separation zwischen Template Logic und Device Data
 **Simple Jinja2 Templates:**
 - Ein Template pro Gerätetyp
 - Basic Variable Substitution
