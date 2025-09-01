@@ -1,0 +1,249 @@
+# Huawei Network Automation Suite - Phase 1 MVP Device Inventory
+# 6 Devices: 2 Core, 2 Access, 1 Edge Router, 1 Management
+
+devices:
+  # Management Switch - Out-of-Band Management
+  mgmt-sw-01:
+    device_type: "huawei"
+    ip: "192.168.10.10"
+    hostname: "MGMT-SW-01"
+    role: "management"
+    template: "management_switch"
+    deployment_order: 1
+    credentials:
+      username: "admin"
+      password: "{{ vault_password }}"
+      ssh_key_file: "~/.ssh/huawei_automation_rsa"
+    mgmt_vlan: 10
+    features:
+      - "basic_switching"
+      - "ssh_management"
+      - "snmp_monitoring"
+
+  # Core Switch 1 - Primary Core Infrastructure
+  core-sw-01:
+    device_type: "huawei"
+    ip: "192.168.10.11"
+    hostname: "CORE-SW-01"
+    role: "core"
+    template: "core_switch"
+    deployment_order: 2
+    credentials:
+      username: "admin"
+      password: "{{ vault_password }}"
+      ssh_key_file: "~/.ssh/huawei_automation_rsa"
+    vlans:
+      "10":
+        name: "Management"
+        description: "Network Management VLAN"
+        ip_address: "192.168.10.1"
+        subnet_mask: "255.255.255.0"
+      "100":
+        name: "Marketing"
+        description: "Marketing Department"
+        ip_address: "192.168.100.1"
+        subnet_mask: "255.255.255.0"
+      "101":
+        name: "Sales"
+        description: "Sales Department"
+        ip_address: "192.168.101.1"
+        subnet_mask: "255.255.255.0"
+      "102":
+        name: "IT"
+        description: "IT Department"
+        ip_address: "192.168.102.1"
+        subnet_mask: "255.255.255.0"
+      "103":
+        name: "Finance"
+        description: "Finance Department"
+        ip_address: "192.168.103.1"
+        subnet_mask: "255.255.255.0"
+      "999":
+        name: "Quarantine"
+        description: "Quarantine VLAN"
+        ip_address: "192.168.999.1"
+        subnet_mask: "255.255.255.0"
+    stp:
+      mode: "rstp"
+      priority: 4096
+    features:
+      - "inter_vlan_routing"
+      - "stp_rstp"
+      - "trunk_links"
+
+  # Core Switch 2 - Secondary Core Infrastructure
+  core-sw-02:
+    device_type: "huawei"
+    ip: "192.168.10.12"
+    hostname: "CORE-SW-02"
+    role: "core"
+    template: "core_switch"
+    deployment_order: 3
+    credentials:
+      username: "admin"
+      password: "{{ vault_password }}"
+      ssh_key_file: "~/.ssh/huawei_automation_rsa"
+    vlans:
+      "10":
+        name: "Management"
+        description: "Network Management VLAN"
+        ip_address: "192.168.10.2"
+        subnet_mask: "255.255.255.0"
+      "100":
+        name: "Marketing"
+        description: "Marketing Department"
+        ip_address: "192.168.100.2"
+        subnet_mask: "255.255.255.0"
+      "101":
+        name: "Sales"
+        description: "Sales Department"
+        ip_address: "192.168.101.2"
+        subnet_mask: "255.255.255.0"
+      "102":
+        name: "IT"
+        description: "IT Department"
+        ip_address: "192.168.102.2"
+        subnet_mask: "255.255.255.0"
+      "103":
+        name: "Finance"
+        description: "Finance Department"
+        ip_address: "192.168.103.2"
+        subnet_mask: "255.255.255.0"
+      "999":
+        name: "Quarantine"
+        description: "Quarantine VLAN"
+        ip_address: "192.168.999.2"
+        subnet_mask: "255.255.255.0"
+    stp:
+      mode: "rstp"
+      priority: 8192
+    features:
+      - "inter_vlan_routing"
+      - "stp_rstp"
+      - "trunk_links"
+
+  # Access Switch 1 - Marketing and Sales
+  access-sw-01:
+    device_type: "huawei"
+    ip: "192.168.10.13"
+    hostname: "ACCESS-SW-01"
+    role: "access"
+    template: "access_switch"
+    deployment_order: 4
+    credentials:
+      username: "admin"
+      password: "{{ vault_password }}"
+      ssh_key_file: "~/.ssh/huawei_automation_rsa"
+    port_config:
+      "1-8":
+        vlan: 100
+        description: "Marketing Department"
+        poe: true
+        port_security: true
+      "9-16":
+        vlan: 101
+        description: "Sales Department"
+        poe: true
+        port_security: true
+      "23-24":
+        mode: "trunk"
+        description: "Uplinks to Core"
+        native_vlan: 10
+    features:
+      - "poe"
+      - "basic_port_security"
+      - "access_ports"
+
+  # Access Switch 2 - IT and Finance
+  access-sw-02:
+    device_type: "huawei"
+    ip: "192.168.10.14"
+    hostname: "ACCESS-SW-02"
+    role: "access"
+    template: "access_switch"
+    deployment_order: 5
+    credentials:
+      username: "admin"
+      password: "{{ vault_password }}"
+      ssh_key_file: "~/.ssh/huawei_automation_rsa"
+    port_config:
+      "1-8":
+        vlan: 102
+        description: "IT Department"
+        poe: true
+        port_security: true
+      "9-16":
+        vlan: 103
+        description: "Finance Department"
+        poe: true
+        port_security: true
+      "23-24":
+        mode: "trunk"
+        description: "Uplinks to Core"
+        native_vlan: 10
+    features:
+      - "poe"
+      - "basic_port_security"
+      - "access_ports"
+
+  # Edge Router - WAN Connectivity
+  edge-router-01:
+    device_type: "huawei_vrp"
+    ip: "192.168.10.15"
+    hostname: "EDGE-ROUTER-01"
+    role: "edge"
+    template: "edge_router"
+    deployment_order: 6
+    credentials:
+      username: "admin"
+      password: "{{ vault_password }}"
+      ssh_key_file: "~/.ssh/huawei_automation_rsa"
+    interfaces:
+      "GigabitEthernet0/0/1":
+        description: "WAN Interface"
+        ip_address: "203.0.113.10"
+        subnet_mask: "255.255.255.252"
+        shutdown: false
+      "GigabitEthernet0/0/2":
+        description: "LAN Interface"
+        ip_address: "192.168.10.254"
+        subnet_mask: "255.255.255.0"
+        shutdown: false
+    routing:
+      ospf:
+        process_id: 1
+        router_id: "192.168.10.15"
+        area: 0
+        networks:
+          - "192.168.10.0/24"
+          - "192.168.100.0/24"
+          - "192.168.101.0/24"
+          - "192.168.102.0/24"
+          - "192.168.103.0/24"
+      static_routes:
+        - destination: "0.0.0.0/0"
+          next_hop: "203.0.113.9"
+          description: "Default route to ISP"
+    nat:
+      inside_interfaces:
+        - "GigabitEthernet0/0/2"
+      outside_interfaces:
+        - "GigabitEthernet0/0/1"
+    features:
+      - "ospf_routing"
+      - "basic_nat"
+      - "simple_acls"
+
+# Global Configuration
+global_settings:
+  ssh_timeout: 30
+  deploy_timeout: 300
+  dry_run_default: true
+  backup_configs: true
+  
+# Phase 1 Deployment Strategy
+deployment_strategy:
+  mode: "sequential"
+  rollback_on_failure: true
+  validate_before_deploy: true
+  post_deploy_verification: true

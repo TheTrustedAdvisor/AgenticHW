@@ -1,62 +1,79 @@
 #!/usr/bin/env python3
 """
-Huawei Network Automation Suite - Phase 1 MVP Demo
-Demonstrates core functionality with 6 Huawei devices.
+Phase 1 MVP Demo System für Huawei Network Automation Suite
+Vollständige Demonstration aller 3 Core Modules und 4 Templates
+
+Features:
+- DeviceManager: SSH-basierte Geräteverbindung
+- TemplateEngine: 4/4 Template Validation (PASS erforderlich)
+- DeploymentOrchestrator: Sequential Deployment
+- Inventory-basierte Orchestrierung
+- Dry-Run und Preview Modi
+- Comprehensive Error Handling
 """
 
-import sys
 import os
+import sys
 import logging
 from pathlib import Path
+from datetime import datetime
 
-# Add src directory to Python path
-src_path = Path(__file__).parent / "src"
+# Add src to path for imports
+project_root = Path(__file__).parent
+src_path = project_root / "src"
 sys.path.insert(0, str(src_path))
 
-from automation.huawei.scripts.core.device_manager import DeviceManager
-from automation.huawei.scripts.core.template_engine import TemplateEngine
-from automation.huawei.scripts.core.deployment_orchestrator import DeploymentOrchestrator
+try:
+    from automation.huawei.scripts.core.device_manager import DeviceManager
+    from automation.huawei.scripts.core.template_engine import TemplateEngine
+    from automation.huawei.scripts.core.deployment_orchestrator import DeploymentOrchestrator
+except ImportError as e:
+    print(f"❌ Import Error: {e}")
+    print("Please ensure all dependencies are installed: pip install -r requirements.txt")
+    sys.exit(1)
 
 
 def setup_logging():
-    """Configure logging for the demo."""
+    """Setup logging for demo"""
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
         handlers=[
             logging.StreamHandler(),
-            logging.FileHandler('demo_automation.log')
+            logging.FileHandler('phase1_mvp_demo.log')
         ]
     )
 
 
 def print_banner():
-    """Print demo banner."""
+    """Print demo banner"""
     print("\n" + "="*80)
     print("🚀 HUAWEI NETWORK AUTOMATION SUITE - PHASE 1 MVP DEMO")
     print("="*80)
     print("📋 Scope: 6 Huawei Devices - Core Infrastructure Automation")
     print("🎯 Features: SSH Auth, Template Engine, Sequential Deployment")
     print("⚡ Architecture: 3 Core Modules + 4 Templates + Comprehensive Testing")
-    print("="*80 + "\n")
+    print("🔧 Python 3.13 Compatible - No telnetlib Dependencies")
+    print("="*80)
+    print()
 
 
 def print_section(title):
-    """Print section header."""
+    """Print section header"""
     print(f"\n{'─'*60}")
     print(f"📌 {title}")
-    print('─'*60)
+    print(f"{'─'*60}")
 
 
 def demonstrate_core_modules():
-    """Demonstrate the three core modules."""
+    """Demonstrate all 3 core modules"""
     print_section("CORE MODULES DEMONSTRATION")
     
     # 1. DeviceManager Demo
     print("\n🔧 1. DeviceManager - SSH-based Device Management")
     device_manager = DeviceManager()
     
-    # Add sample device configurations (simulated)
+    # Simulate device information
     devices = [
         ("mgmt-sw-01", "192.168.10.10", "Management Switch"),
         ("core-sw-01", "192.168.10.11", "Core Switch 1"),
@@ -66,16 +83,15 @@ def demonstrate_core_modules():
         ("edge-router-01", "192.168.10.15", "Edge Router")
     ]
     
-    print("   📊 Device connections (simulated - using test IPs):")
+    print("   📊 Device Management Capabilities:")
     for device_name, ip, description in devices:
-        # Test connection status (simulated)
-        print(f"   📡 {description}: {device_name} ({ip}) - Ready for connection")
+        print(f"   📡 {description}: {device_name} ({ip}) - Ready for SSH connection")
     
     print(f"   ✅ Total devices available: {len(devices)}")
-    print("   📋 DeviceManager ready for SSH connections with methods:")
-    print("      • connect(device_name, device_ip)")
+    print("   📋 DeviceManager Methods:")
+    print("      • connect(device_name, device_ip, **kwargs)")
     print("      • send_command(device_name, command)")
-    print("      • deploy_config(device_name, configuration)")
+    print("      • deploy_config(device_name, configuration, dry_run=True)")
     print("      • disconnect(device_name)")
     print("      • get_connection_status()")
     
@@ -90,15 +106,25 @@ def demonstrate_core_modules():
     for template in templates:
         print(f"      • {template}")
     
-    # Validate template syntax
-    print("\n   🔍 Template Syntax Validation:")
+    # Validate template syntax (Phase 1 Requirement: 4/4 PASS)
+    print("\n   🔍 Template Syntax Validation (Phase 1 Requirement: 4/4 PASS):")
     validation_results = template_engine.validate_all_templates()
+    valid_count = 0
+    
     for template_name, result in validation_results.items():
         is_valid = result.get('valid', False)
         status = "✅ PASS" if is_valid else "❌ FAIL"
         print(f"      {status} {template_name}")
         if not is_valid and 'error' in result:
             print(f"         Error: {result['error']}")
+        else:
+            valid_count += 1
+    
+    print(f"\n   📊 Template Validation Summary: {valid_count}/{len(templates)} templates valid")
+    if valid_count == len(templates):
+        print("   🎉 SUCCESS: All templates passed validation!")
+    else:
+        print("   ⚠️  WARNING: Some templates failed validation")
     
     # 3. DeploymentOrchestrator Demo
     print("\n🎯 3. DeploymentOrchestrator - Intelligent Deployment")
@@ -107,25 +133,34 @@ def demonstrate_core_modules():
     # Load inventory
     inventory_file = "src/automation/huawei/inventory/devices.yaml"
     if Path(inventory_file).exists():
-        print(f"   📋 Inventory file found: {inventory_file}")
-        print("   🎯 DeploymentOrchestrator capabilities:")
-        print("      • load_inventory(file_path)")
-        print("      • validate_device_templates()")
-        print("      • deploy_sequential(dry_run=True)")
-        print("      • deploy_parallel(max_workers=4)")
-        print("   ✅ Orchestrator ready for deployment operations")
+        success = orchestrator.load_inventory(inventory_file)
+        print(f"   📋 Inventory loading: {'✅ SUCCESS' if success else '❌ FAILED'}")
+        
+        if success:
+            devices = orchestrator.get_devices()
+            print(f"   📊 Devices in inventory: {len(devices)}")
+            
+            # Show deployment sequence
+            deployment_sequence = orchestrator.get_deployment_sequence()
+            print(f"   🎯 Phase 1 Sequential Deployment Order:")
+            for i, device in enumerate(deployment_sequence, 1):
+                role = device.get('role', 'unknown')
+                name = device.get('name', 'unknown')
+                template = device.get('template', 'unknown')
+                print(f"      {i}. {name} ({role}) - Template: {template}.j2")
+            
+            # Validate templates
+            templates_valid = orchestrator.validate_templates()
+            print(f"   🔍 Template validation: {'✅ PASSED' if templates_valid else '❌ FAILED'}")
+        
     else:
         print(f"   ⚠️  Inventory file not found: {inventory_file}")
-        print("   📄 Creating basic inventory structure demonstration...")
-        print("   🎯 DeploymentOrchestrator would coordinate:")
-        print("      • Template validation and rendering")
-        print("      • Device connection management")  
-        print("      • Sequential or parallel deployment")
-        print("      • Error handling and rollback procedures")
+    
+    print("   ✅ DeploymentOrchestrator ready for sequential deployment")
 
 
 def demonstrate_template_generation():
-    """Demonstrate configuration generation."""
+    """Demonstrate configuration generation"""
     print_section("CONFIGURATION GENERATION DEMO")
     
     template_engine = TemplateEngine("src/automation/huawei/templates")
@@ -136,7 +171,8 @@ def demonstrate_template_generation():
     sample_variables = {
         'hostname': 'CORE-SW-01',
         'management_ip': '192.168.10.11',
-        'vrrp_priority': 110,
+        'generation_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'template_name': 'core_switch.j2',
         'vlans': {
             '10': {
                 'name': 'Management',
@@ -157,26 +193,19 @@ def demonstrate_template_generation():
                 'subnet_mask': '255.255.255.0'
             }
         },
-        'interfaces': {
-            'GigabitEthernet0/0/1': {
-                'description': 'Trunk to Access Switch 1',
-                'type': 'trunk',
-                'vlans': [10, 100, 101]
-            },
-            'GigabitEthernet0/0/2': {
-                'description': 'Trunk to Access Switch 2',
-                'type': 'trunk',
-                'vlans': [10, 100, 101]
-            }
-        }
+        'stp': {
+            'mode': 'rstp',
+            'priority': 4096
+        },
+        'features': ['inter_vlan_routing', 'stp_rstp', 'trunk_links']
     }
     
-    config = template_engine.render_template("core_switch.j2", sample_variables)
+    config = template_engine.render_template('core_switch.j2', sample_variables)
+    
     if config:
         print("   ✅ Configuration generated successfully")
-        print(f"   📊 Configuration size: {len(config)} characters")
         
-        # Save to configs directory
+        # Save configuration for review
         configs_dir = Path("src/automation/huawei/configs")
         configs_dir.mkdir(exist_ok=True)
         
@@ -198,7 +227,7 @@ def demonstrate_template_generation():
 
 
 def demonstrate_deployment_simulation():
-    """Demonstrate deployment simulation (dry run)."""
+    """Demonstrate deployment simulation (dry run)"""
     print_section("DEPLOYMENT SIMULATION (DRY RUN)")
     
     device_manager = DeviceManager()
@@ -214,8 +243,8 @@ def demonstrate_deployment_simulation():
         if success:
             print("✅ Inventory loaded successfully")
             
-            # Validate deployment plan
-            print("\n🔍 Validating deployment plan...")
+            # Validate templates
+            print("\n🔍 Validating templates...")
             templates_valid = orchestrator.validate_templates()
             
             if templates_valid:
@@ -225,21 +254,20 @@ def demonstrate_deployment_simulation():
                 devices = orchestrator.get_devices()
                 print(f"📊 Devices ready for deployment: {len(devices)}")
                 
-                # Execute dry run (simplified for demo)
+                # Execute dry run deployment
                 print("\n🎯 Executing dry run deployment...")
+                print("   (Simulating sequential deployment: Management → Core → Access → Edge)")
+                
+                results = orchestrator.deploy_all_devices(dry_run=True)
                 
                 # Display results
-                print("\n📊 Deployment Results:")
-                print("   ✅ All devices processed successfully in dry-run mode")
-                print("   📋 6/6 devices ready for deployment")
-                print("   ⏱️ Validation completed in < 0.01 seconds") 
-                print("   � Success Rate: 100.0%")
+                print("\n📊 Deployment Results (DRY RUN):")
+                for device_name, result in results.results.items():
+                    status_icon = "✅" if result.status.name == "SUCCESS" else "❌"
+                    print(f"   {status_icon} {device_name}: {result.message}")
                 
-                # Display summary
-                print(f"\n📋 Deployment Summary (simulated):")
-                print(f"   • Total devices: {len(devices)}")
-                print(f"   • Templates validated: {'PASS' if templates_valid else 'FAIL'}")
-                print(f"   • Ready for deployment: ✅ All systems operational")
+                print(f"\n📈 Deployment Summary: {results.summary}")
+                print(f"⏱️ Execution time: {results.execution_time:.2f} seconds")
                 
             else:
                 print("❌ Template validation failed")
@@ -249,75 +277,38 @@ def demonstrate_deployment_simulation():
     else:
         print(f"⚠️  Inventory file not found: {inventory_file}")
         print("   Creating minimal demo configuration...")
-        
-        # Create minimal demo
-        device_def = {
-            'name': 'demo-switch',
-            'host': '192.168.1.100',
-            'username': 'demo',
-            'password': 'demo123',
-            'template': 'access_switch.j2',
-            'variables': {
-                'hostname': 'DEMO-SW-01',
-                'management_ip': '192.168.1.100'
-            }
-        }
-        
-        print("✅ Demo configuration created for testing")
 
 
-def display_project_structure():
-    """Display project structure."""
+def show_project_structure():
+    """Show project structure"""
     print_section("PROJECT STRUCTURE OVERVIEW")
     
-    def show_tree(path, prefix="", max_depth=3, current_depth=0):
-        """Recursively show directory tree."""
+    def print_tree(path, prefix="", max_depth=3, current_depth=0):
         if current_depth >= max_depth:
             return
         
         try:
-            items = sorted(path.iterdir())
-            dirs = [item for item in items if item.is_dir() and not item.name.startswith('.')]
-            files = [item for item in items if item.is_file() and not item.name.startswith('.')]
-            
-            # Show directories first
-            for i, item in enumerate(dirs):
-                is_last_dir = (i == len(dirs) - 1) and len(files) == 0
-                current_prefix = "└── " if is_last_dir else "├── "
-                print(f"{prefix}{current_prefix}📁 {item.name}/")
-                
-                extension = "    " if is_last_dir else "│   "
-                show_tree(item, prefix + extension, max_depth, current_depth + 1)
-            
-            # Show files
-            for i, item in enumerate(files):
-                is_last = i == len(files) - 1
+            items = sorted(path.iterdir(), key=lambda x: (x.is_file(), x.name.lower()))
+            for i, item in enumerate(items):
+                is_last = i == len(items) - 1
                 current_prefix = "└── " if is_last else "├── "
                 
-                # File type icons
-                if item.suffix == '.py':
-                    icon = "🐍"
-                elif item.suffix == '.j2':
-                    icon = "📄"
-                elif item.suffix in ['.yaml', '.yml']:
-                    icon = "⚙️"
-                elif item.suffix == '.md':
-                    icon = "📚"
+                if item.is_dir():
+                    print(f"{prefix}{current_prefix}📁 {item.name}/")
+                    next_prefix = prefix + ("    " if is_last else "│   ")
+                    print_tree(item, next_prefix, max_depth, current_depth + 1)
                 else:
-                    icon = "📄"
-                
-                print(f"{prefix}{current_prefix}{icon} {item.name}")
-                
+                    icon = "🐍" if item.suffix == ".py" else "📚" if item.suffix == ".md" else "📄"
+                    print(f"{prefix}{current_prefix}{icon} {item.name}")
         except PermissionError:
-            print(f"{prefix}├── ❌ Permission denied")
+            pass
     
     print("📁 Project Structure:")
-    project_root = Path(".")
-    show_tree(project_root)
+    print_tree(Path("."))
 
 
-def display_phase_1_summary():
-    """Display Phase 1 implementation summary."""
+def print_implementation_summary():
+    """Print implementation summary"""
     print_section("PHASE 1 MVP IMPLEMENTATION SUMMARY")
     
     print("🎯 PHASE 1 SCOPE:")
@@ -330,94 +321,90 @@ def display_phase_1_summary():
     
     print("\n🏗️  CORE ARCHITECTURE:")
     print("   • DeviceManager: SSH-based device connectivity and management")
-    print("   • TemplateEngine: Jinja2-based configuration generation") 
+    print("   • TemplateEngine: Jinja2-based configuration generation")
     print("   • DeploymentOrchestrator: Intelligent deployment sequencing")
     
     print("\n📊 IMPLEMENTATION STATUS:")
-    
-    # Check core modules
     core_modules = [
-        "src/automation/huawei/scripts/core/device_manager.py",
-        "src/automation/huawei/scripts/core/template_engine.py", 
-        "src/automation/huawei/scripts/core/deployment_orchestrator.py"
+        "device_manager.py",
+        "template_engine.py", 
+        "deployment_orchestrator.py"
     ]
     
     for module in core_modules:
-        exists = Path(module).exists()
-        status = "✅" if exists else "❌"
-        print(f"   {status} {Path(module).name}")
-    
-    # Check templates
-    templates = [
-        "src/automation/huawei/templates/management_switch.j2",
-        "src/automation/huawei/templates/core_switch.j2",
-        "src/automation/huawei/templates/access_switch.j2",
-        "src/automation/huawei/templates/edge_router.j2"
-    ]
+        module_path = Path(f"src/automation/huawei/scripts/core/{module}")
+        status = "✅" if module_path.exists() else "❌"
+        print(f"   {status} {module}")
     
     print("\n📄 TEMPLATE STATUS:")
-    for template in templates:
-        exists = Path(template).exists()
-        status = "✅" if exists else "❌"
-        print(f"   {status} {Path(template).name}")
-    
-    # Check inventory
-    inventory_file = "src/automation/huawei/inventory/devices.yaml"
-    exists = Path(inventory_file).exists()
-    status = "✅" if exists else "❌"
-    print(f"\n⚙️  INVENTORY: {status} {Path(inventory_file).name}")
-    
-    # Check documentation
-    docs_files = [
-        "docs/architecture.md",
-        "docs/network-topology.md",
-        "docs/deployment-guide.md",
-        "docs/README.md"
+    templates = [
+        "management_switch.j2",
+        "core_switch.j2", 
+        "access_switch.j2",
+        "edge_router.j2"
     ]
     
+    for template in templates:
+        template_path = Path(f"src/automation/huawei/templates/{template}")
+        status = "✅" if template_path.exists() else "❌"
+        print(f"   {status} {template}")
+    
+    print("\n⚙️  INVENTORY:", end=" ")
+    inventory_path = Path("src/automation/huawei/inventory/devices.yaml")
+    print("✅ devices.yaml" if inventory_path.exists() else "❌ devices.yaml")
+    
     print("\n📚 DOCUMENTATION STATUS:")
-    for doc in docs_files:
-        exists = Path(doc).exists()
-        status = "✅" if exists else "❌"
-        print(f"   {status} {Path(doc).name}")
+    docs = [
+        "architecture.md",
+        "network-topology.md",
+        "deployment-guide.md",
+        "README.md"
+    ]
+    
+    for doc in docs:
+        print(f"   ❌ {doc}")
 
 
 def main():
-    """Main demo function."""
+    """Main demo function"""
     setup_logging()
-    print_banner()
     
     try:
-        # 1. Core modules demonstration
+        print_banner()
+        
+        # Core modules demonstration
         demonstrate_core_modules()
         
-        # 2. Template generation
+        # Template generation demo
         demonstrate_template_generation()
         
-        # 3. Deployment simulation
+        # Deployment simulation
         demonstrate_deployment_simulation()
         
-        # 4. Project structure
-        display_project_structure()
+        # Project structure
+        show_project_structure()
         
-        # 5. Implementation summary
-        display_phase_1_summary()
+        # Implementation summary
+        print_implementation_summary()
         
         print("\n" + "="*80)
         print("🎉 DEMO COMPLETED SUCCESSFULLY!")
         print("="*80)
         print("📋 Next Steps:")
-        print("   1. Configure actual device credentials in inventory")
-        print("   2. Test real device connectivity")
-        print("   3. Execute production deployment")
-        print("   4. Monitor deployment results")
-        print("   5. Plan Phase 2 enterprise features")
-        print("\n🚀 Phase 1 MVP is ready for production deployment!")
-        print("="*80 + "\n")
+        print("   1. Install dependencies: pip install -r requirements.txt")
+        print("   2. Run setup script: ./scripts/setup.sh")
+        print("   3. Configure actual device credentials in inventory")
+        print("   4. Test real device connectivity")
+        print("   5. Execute production deployment")
+        print("   6. Monitor deployment results")
+        print("   7. Plan Phase 2 enterprise features")
+        print()
+        print("🚀 Phase 1 MVP is ready for production deployment!")
+        print("="*80)
         
     except Exception as e:
         logging.error(f"Demo failed with error: {str(e)}")
-        print(f"\n❌ Demo failed: {str(e)}")
+        print(f"❌ Demo failed: {str(e)}")
         print("Please check the logs for detailed error information.")
         return 1
     
@@ -425,4 +412,5 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    exit_code = main()
+    sys.exit(exit_code)

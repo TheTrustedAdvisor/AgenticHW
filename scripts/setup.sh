@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Huawei Network Automation Suite - Phase 1 MVP Setup Script
-# Automated setup for complete development and deployment environment
+# Huawei Network Automation Suite - Phase 1 MVP Setup Script  
+# Complete automation setup with Python 3.13 compatibility and .venv preservation
 
 set -e  # Exit on any error
 
@@ -40,14 +40,15 @@ print_banner() {
     echo "📋 Scope: 6 Huawei Devices - Complete Infrastructure Automation"
     echo "🎯 Features: SSH Auth, Template Engine, Sequential Deployment"
     echo "⚡ Architecture: 3 Core Modules + 4 Templates + Comprehensive Testing"
+    echo "🔧 Python 3.13 Compatible - .venv Preservation Mode"
     echo "================================================================================"
     echo ""
 }
 
 print_banner
 
-# Step 1: Check system requirements
-print_status "Checking system requirements..."
+# Step 1: Check system requirements and Python 3.13 compatibility
+print_status "Checking Python 3.13 compatibility..."
 
 # Check Python version
 if command -v python3 &> /dev/null; then

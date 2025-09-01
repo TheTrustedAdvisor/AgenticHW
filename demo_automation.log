@@ -1,0 +1,317 @@
+2025-09-01 07:26:11,499 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:26:11,499 - root - ERROR - Demo failed with error: issubclass() arg 1 must be a class
+2025-09-01 07:27:24,949 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:27:24,950 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:27:24,950 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:27:24,964 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:27:24,972 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:27:24,982 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:27:24,989 - automation.huawei.scripts.core.template_engine - ERROR - ❌ Template management_switch.j2 undefined variable: Undefined variable: 'dict object' has no attribute '10'
+2025-09-01 07:27:24,990 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 3/4 templates valid
+2025-09-01 07:27:24,990 - automation.huawei.scripts.core.deployment_orchestrator - INFO - DeploymentOrchestrator initialized
+2025-09-01 07:27:24,990 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:27:24,998 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:27:24,998 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:27:24,998 - automation.huawei.scripts.core.deployment_orchestrator - INFO - DeploymentOrchestrator initialized
+2025-09-01 07:27:25,007 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ Loaded inventory with 6 devices from src/automation/huawei/inventory/devices.yaml
+2025-09-01 07:27:25,007 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🔍 Validating templates before deployment...
+2025-09-01 07:27:25,007 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:27:25,019 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:27:25,026 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:27:25,037 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:27:25,042 - automation.huawei.scripts.core.template_engine - ERROR - ❌ Template management_switch.j2 undefined variable: Undefined variable: 'dict object' has no attribute '10'
+2025-09-01 07:27:25,042 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 3/4 templates valid
+2025-09-01 07:27:25,043 - automation.huawei.scripts.core.deployment_orchestrator - INFO - Template validation: 4 templates checked
+2025-09-01 07:27:25,043 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access_switch.j2: PASS
+2025-09-01 07:27:25,043 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core_switch.j2: PASS
+2025-09-01 07:27:25,043 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ edge_router.j2: PASS
+2025-09-01 07:27:25,043 - automation.huawei.scripts.core.deployment_orchestrator - ERROR - ❌ management_switch.j2: FAIL - Undefined variable: 'dict object' has no attribute '10'
+2025-09-01 07:27:25,043 - automation.huawei.scripts.core.deployment_orchestrator - ERROR - ❌ Template validation failed - not all templates are valid
+2025-09-01 07:28:51,946 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:28:51,947 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:28:51,947 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:28:51,963 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:28:51,971 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:28:51,982 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:28:51,988 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:28:51,988 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:28:51,988 - automation.huawei.scripts.core.deployment_orchestrator - INFO - DeploymentOrchestrator initialized
+2025-09-01 07:28:51,988 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:28:51,996 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:28:51,997 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:28:51,997 - automation.huawei.scripts.core.deployment_orchestrator - INFO - DeploymentOrchestrator initialized
+2025-09-01 07:28:52,005 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ Loaded inventory with 6 devices from src/automation/huawei/inventory/devices.yaml
+2025-09-01 07:28:52,005 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🔍 Validating templates before deployment...
+2025-09-01 07:28:52,005 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:28:52,017 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:28:52,027 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:28:52,038 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.deployment_orchestrator - INFO - Template validation: 4 templates checked
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access_switch.j2: PASS
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core_switch.j2: PASS
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ edge_router.j2: PASS
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ management_switch.j2: PASS
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ All templates validation passed
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎯 Starting DRY RUN deployment of 6 devices
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🔍 Validating templates before deployment...
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.deployment_orchestrator - INFO - Template validation: 4 templates checked
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access_switch.j2: PASS
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core_switch.j2: PASS
+2025-09-01 07:28:52,046 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ edge_router.j2: PASS
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ management_switch.j2: PASS
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ All templates validation passed
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 📋 Deployment sequence calculated:
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    1. mgmt-sw-01 (management)
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    2. core-sw-01 (core)
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    3. core-sw-02 (core)
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    4. access-sw-01 (access)
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    5. access-sw-02 (access)
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    6. edge-router-01 (edge)
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying mgmt-sw-01 (management) - IP: 192.168.10.10
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for mgmt-sw-01 (71 lines)
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ mgmt-sw-01: Successfully deployed 71 configuration lines
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying core-sw-01 (core) - IP: 192.168.10.11
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for core-sw-01 (143 lines)
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core-sw-01: Successfully deployed 143 configuration lines
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying core-sw-02 (core) - IP: 192.168.10.12
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for core-sw-02 (143 lines)
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core-sw-02: Successfully deployed 143 configuration lines
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying access-sw-01 (access) - IP: 192.168.10.13
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for access-sw-01 (117 lines)
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access-sw-01: Successfully deployed 117 configuration lines
+2025-09-01 07:28:52,047 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying access-sw-02 (access) - IP: 192.168.10.14
+2025-09-01 07:28:52,048 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for access-sw-02 (117 lines)
+2025-09-01 07:28:52,048 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access-sw-02: Successfully deployed 117 configuration lines
+2025-09-01 07:28:52,048 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying edge-router-01 (edge) - IP: 192.168.10.15
+2025-09-01 07:28:52,048 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for edge-router-01 (111 lines)
+2025-09-01 07:28:52,048 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ edge-router-01: Successfully deployed 111 configuration lines
+2025-09-01 07:28:52,048 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 📊 Deployment complete: 6/6 devices deployed successfully (100.0%)
+2025-09-01 07:28:52,048 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ⏱️ Total execution time: 0.00 seconds
+2025-09-01 07:28:52,048 - root - ERROR - Demo failed with error: 'DeploymentResult' object has no attribute 'items'
+2025-09-01 07:29:18,646 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:29:18,646 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:29:18,646 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:29:18,659 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:29:18,666 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:29:18,677 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:29:18,682 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:29:18,682 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:29:18,682 - automation.huawei.scripts.core.deployment_orchestrator - INFO - DeploymentOrchestrator initialized
+2025-09-01 07:29:18,683 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:29:18,690 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:29:18,690 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:29:18,690 - automation.huawei.scripts.core.deployment_orchestrator - INFO - DeploymentOrchestrator initialized
+2025-09-01 07:29:18,698 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ Loaded inventory with 6 devices from src/automation/huawei/inventory/devices.yaml
+2025-09-01 07:29:18,698 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🔍 Validating templates before deployment...
+2025-09-01 07:29:18,698 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:29:18,711 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:29:18,718 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:29:18,729 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:29:18,734 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:29:18,734 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:29:18,734 - automation.huawei.scripts.core.deployment_orchestrator - INFO - Template validation: 4 templates checked
+2025-09-01 07:29:18,734 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access_switch.j2: PASS
+2025-09-01 07:29:18,734 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core_switch.j2: PASS
+2025-09-01 07:29:18,734 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ edge_router.j2: PASS
+2025-09-01 07:29:18,734 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ management_switch.j2: PASS
+2025-09-01 07:29:18,734 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ All templates validation passed
+2025-09-01 07:29:18,734 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎯 Starting DRY RUN deployment of 6 devices
+2025-09-01 07:29:18,734 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🔍 Validating templates before deployment...
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO - Template validation: 4 templates checked
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access_switch.j2: PASS
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core_switch.j2: PASS
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ edge_router.j2: PASS
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ management_switch.j2: PASS
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ All templates validation passed
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 📋 Deployment sequence calculated:
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    1. mgmt-sw-01 (management)
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    2. core-sw-01 (core)
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    3. core-sw-02 (core)
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    4. access-sw-01 (access)
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    5. access-sw-02 (access)
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    6. edge-router-01 (edge)
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying mgmt-sw-01 (management) - IP: 192.168.10.10
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for mgmt-sw-01 (71 lines)
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ mgmt-sw-01: Successfully deployed 71 configuration lines
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying core-sw-01 (core) - IP: 192.168.10.11
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for core-sw-01 (143 lines)
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core-sw-01: Successfully deployed 143 configuration lines
+2025-09-01 07:29:18,735 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying core-sw-02 (core) - IP: 192.168.10.12
+2025-09-01 07:29:18,736 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for core-sw-02 (143 lines)
+2025-09-01 07:29:18,736 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core-sw-02: Successfully deployed 143 configuration lines
+2025-09-01 07:29:18,736 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying access-sw-01 (access) - IP: 192.168.10.13
+2025-09-01 07:29:18,736 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for access-sw-01 (117 lines)
+2025-09-01 07:29:18,736 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access-sw-01: Successfully deployed 117 configuration lines
+2025-09-01 07:29:18,736 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying access-sw-02 (access) - IP: 192.168.10.14
+2025-09-01 07:29:18,736 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for access-sw-02 (117 lines)
+2025-09-01 07:29:18,736 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access-sw-02: Successfully deployed 117 configuration lines
+2025-09-01 07:29:18,736 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying edge-router-01 (edge) - IP: 192.168.10.15
+2025-09-01 07:29:18,736 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for edge-router-01 (111 lines)
+2025-09-01 07:29:18,736 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ edge-router-01: Successfully deployed 111 configuration lines
+2025-09-01 07:29:18,736 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 📊 Deployment complete: 6/6 devices deployed successfully (100.0%)
+2025-09-01 07:29:18,736 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ⏱️ Total execution time: 0.00 seconds
+2025-09-01 07:29:18,736 - root - ERROR - Demo failed with error: 'DeploymentResult' object has no attribute 'status'
+2025-09-01 07:31:39,102 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:31:39,102 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:31:39,103 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:31:39,116 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:31:39,124 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:31:39,135 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:31:39,140 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:31:39,140 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:31:39,140 - automation.huawei.scripts.core.deployment_orchestrator - INFO - DeploymentOrchestrator initialized
+2025-09-01 07:31:39,140 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:31:39,148 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:31:39,148 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:31:39,148 - automation.huawei.scripts.core.deployment_orchestrator - INFO - DeploymentOrchestrator initialized
+2025-09-01 07:31:39,156 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ Loaded inventory with 6 devices from src/automation/huawei/inventory/devices.yaml
+2025-09-01 07:31:39,157 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🔍 Validating templates before deployment...
+2025-09-01 07:31:39,157 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:31:39,169 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:31:39,176 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:31:39,187 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.deployment_orchestrator - INFO - Template validation: 4 templates checked
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access_switch.j2: PASS
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core_switch.j2: PASS
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ edge_router.j2: PASS
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ management_switch.j2: PASS
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ All templates validation passed
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎯 Starting DRY RUN deployment of 6 devices
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🔍 Validating templates before deployment...
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.deployment_orchestrator - INFO - Template validation: 4 templates checked
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access_switch.j2: PASS
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core_switch.j2: PASS
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ edge_router.j2: PASS
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ management_switch.j2: PASS
+2025-09-01 07:31:39,192 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ All templates validation passed
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 📋 Deployment sequence calculated:
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    1. mgmt-sw-01 (management)
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    2. core-sw-01 (core)
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    3. core-sw-02 (core)
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    4. access-sw-01 (access)
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    5. access-sw-02 (access)
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO -    6. edge-router-01 (edge)
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying mgmt-sw-01 (management) - IP: 192.168.10.10
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for mgmt-sw-01 (71 lines)
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ mgmt-sw-01: Successfully deployed 71 configuration lines
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying core-sw-01 (core) - IP: 192.168.10.11
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for core-sw-01 (143 lines)
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core-sw-01: Successfully deployed 143 configuration lines
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying core-sw-02 (core) - IP: 192.168.10.12
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for core-sw-02 (143 lines)
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core-sw-02: Successfully deployed 143 configuration lines
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying access-sw-01 (access) - IP: 192.168.10.13
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for access-sw-01 (117 lines)
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access-sw-01: Successfully deployed 117 configuration lines
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying access-sw-02 (access) - IP: 192.168.10.14
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for access-sw-02 (117 lines)
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access-sw-02: Successfully deployed 117 configuration lines
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🚀 Deploying edge-router-01 (edge) - IP: 192.168.10.15
+2025-09-01 07:31:39,193 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🎭 DRY RUN: Configuration for edge-router-01 (111 lines)
+2025-09-01 07:31:39,194 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ edge-router-01: Successfully deployed 111 configuration lines
+2025-09-01 07:31:39,194 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 📊 Deployment complete: 6/6 devices deployed successfully (100.0%)
+2025-09-01 07:31:39,194 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ⏱️ Total execution time: 0.00 seconds
+2025-09-01 07:31:39,194 - root - ERROR - Demo failed with error: 'DeploymentResult' object has no attribute 'status'
+2025-09-01 07:34:24,726 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:34:24,726 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:34:24,727 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:34:24,740 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:34:24,748 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:34:24,758 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:34:24,763 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:34:24,764 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:34:24,764 - automation.huawei.scripts.core.deployment_orchestrator - INFO - DeploymentOrchestrator initialized
+2025-09-01 07:34:24,764 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:34:24,771 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:34:24,772 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:34:24,772 - automation.huawei.scripts.core.deployment_orchestrator - INFO - DeploymentOrchestrator initialized
+2025-09-01 07:34:24,780 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ Loaded inventory with 6 devices from src/automation/huawei/inventory/devices.yaml
+2025-09-01 07:34:24,780 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🔍 Validating templates before deployment...
+2025-09-01 07:34:24,780 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:34:24,793 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:34:24,800 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:34:24,810 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:34:24,815 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:34:24,815 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:34:24,815 - automation.huawei.scripts.core.deployment_orchestrator - INFO - Template validation: 4 templates checked
+2025-09-01 07:34:24,815 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access_switch.j2: PASS
+2025-09-01 07:34:24,815 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core_switch.j2: PASS
+2025-09-01 07:34:24,815 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ edge_router.j2: PASS
+2025-09-01 07:34:24,815 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ management_switch.j2: PASS
+2025-09-01 07:34:24,815 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ All templates validation passed
+2025-09-01 07:34:29,827 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:34:29,827 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:34:29,827 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:34:29,841 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:34:29,849 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:34:29,860 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:34:29,865 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:34:29,865 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:34:29,865 - automation.huawei.scripts.core.deployment_orchestrator - INFO - DeploymentOrchestrator initialized
+2025-09-01 07:34:29,865 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:34:29,873 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:34:29,873 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:34:29,873 - automation.huawei.scripts.core.deployment_orchestrator - INFO - DeploymentOrchestrator initialized
+2025-09-01 07:34:29,882 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ Loaded inventory with 6 devices from src/automation/huawei/inventory/devices.yaml
+2025-09-01 07:34:29,882 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🔍 Validating templates before deployment...
+2025-09-01 07:34:29,882 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:34:29,894 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:34:29,902 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:34:29,912 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:34:29,917 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:34:29,917 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:34:29,917 - automation.huawei.scripts.core.deployment_orchestrator - INFO - Template validation: 4 templates checked
+2025-09-01 07:34:29,917 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access_switch.j2: PASS
+2025-09-01 07:34:29,917 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core_switch.j2: PASS
+2025-09-01 07:34:29,917 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ edge_router.j2: PASS
+2025-09-01 07:34:29,917 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ management_switch.j2: PASS
+2025-09-01 07:34:29,918 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ All templates validation passed
+2025-09-01 07:43:48,807 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:43:48,808 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:43:48,808 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:43:48,821 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:43:48,829 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:43:48,840 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:43:48,845 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:43:48,846 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:43:48,846 - automation.huawei.scripts.core.deployment_orchestrator - INFO - DeploymentOrchestrator initialized
+2025-09-01 07:43:48,846 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:43:48,853 - automation.huawei.scripts.core.device_manager - INFO - DeviceManager initialized for Phase 1 MVP
+2025-09-01 07:43:48,853 - automation.huawei.scripts.core.template_engine - INFO - TemplateEngine initialized with directory: src/automation/huawei/templates
+2025-09-01 07:43:48,853 - automation.huawei.scripts.core.deployment_orchestrator - INFO - DeploymentOrchestrator initialized
+2025-09-01 07:43:48,862 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ Loaded inventory with 6 devices from src/automation/huawei/inventory/devices.yaml
+2025-09-01 07:43:48,862 - automation.huawei.scripts.core.deployment_orchestrator - INFO - 🔍 Validating templates before deployment...
+2025-09-01 07:43:48,862 - automation.huawei.scripts.core.template_engine - INFO - Validating 4 templates...
+2025-09-01 07:43:48,874 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template access_switch.j2 syntax validation passed
+2025-09-01 07:43:48,881 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template core_switch.j2 syntax validation passed
+2025-09-01 07:43:48,891 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template edge_router.j2 syntax validation passed
+2025-09-01 07:43:48,896 - automation.huawei.scripts.core.template_engine - INFO - ✅ Template management_switch.j2 syntax validation passed
+2025-09-01 07:43:48,896 - automation.huawei.scripts.core.template_engine - INFO - Template validation complete: 4/4 templates valid
+2025-09-01 07:43:48,896 - automation.huawei.scripts.core.deployment_orchestrator - INFO - Template validation: 4 templates checked
+2025-09-01 07:43:48,896 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ access_switch.j2: PASS
+2025-09-01 07:43:48,896 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ core_switch.j2: PASS
+2025-09-01 07:43:48,896 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ edge_router.j2: PASS
+2025-09-01 07:43:48,896 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ management_switch.j2: PASS
+2025-09-01 07:43:48,896 - automation.huawei.scripts.core.deployment_orchestrator - INFO - ✅ All templates validation passed
